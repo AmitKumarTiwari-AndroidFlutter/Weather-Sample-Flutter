@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:weather_sample/pages/home/home_weather_controller.dart';
 import 'package:weather_sample/pages/forecast/forecast_page.dart';
 import 'package:weather_sample/utils/app_color.dart';
+import '../../constants/api_constants.dart';
 import '../../models/location_res.dart';
 import 'package:google_maps_place_picker_mb/google_maps_place_picker.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -35,8 +36,8 @@ class HomeWeather extends GetView<HomeWeatherController> {
                   onTap: (){
                     Get.to( PlacePicker(
                       apiKey: Platform.isAndroid
-                          ? "AIzaSyD-884kxynfx6veYZQwydwHIpGdT6M5HnA"
-                          : "AIzaSyD-884kxynfx6veYZQwydwHIpGdT6M5HnA",
+                          ? kGoogleApiKey
+                          : kGoogleApiKey,
                       onPlacePicked: (PickResult result) {
                         controller.selectedPlace.value = result;
                         controller.locationPick.value =  LocationRes(
